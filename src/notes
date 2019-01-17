@@ -306,6 +306,18 @@ Then next:
 	$ git commit -m "Add three files"
 			To commit to a repository, use the "commit" command. Next, pass the "commit" command the "-m" option, which stands for "message". Lastly, type in your commit message. We wrote "Add three files" for our example, but it's recommended that you write more meaningful messages like "Add admin panel" or "Update admin panel". Note that we didn't use the past tense! A commit message must tell what your commit does – adds or removes files, updates app features.
 
+    $ git clone git@github.com:YourUsername/your-app.git
+            you've pushed your changes from a local repository to a remote repository and cloned a remote repository.
+            Git can clone an entire project from a remote repository. That's what the "clone" command,What "git clone" does is it copies the entire project to a directory on your computer. The directory will be created automatically and will have the same project name as the remote repository.
+
+    $ git pull
+              Running "git pull" is enough to update your local repository.
+              When you run the "pull" command, Git will:
+              Pull changes in the current branch made by other developers; and
+              Synchronize your local repository with the remote repository.
+
+       then you can try $ git push to push your code to the repository
+
 The basic Git flow looks like this:
 
 	-#  Create a new file in a root directory or in a subdirectory, or update an existing file.
