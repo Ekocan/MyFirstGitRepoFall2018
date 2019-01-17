@@ -1,0 +1,314 @@
+01/16/2019
+----------
+
+Git and GitHub Day1.
+--------------------
+
+Git - is a version control tool/software.
+
+It keeps track of changes that you made and
+lets you save different versions
+
+By doing that, you can easily go back to the old version
+or compare with previous versions.
+
+Git, SVN, CVS ...
+
+Version1 ==> Version2 ==> Version3
+====================================
+
+2 kinds of Version control software:
+
+1) Centralized
+2) Distributed
+
+another benefit of VCS(version control system)
+Source control is security and backup for your code.
+
+You can save your code in the cloud location and
+even if your computer is broken, your code is safe.
+=================
+
+
+Local repository     ===> remote repository
+
+repository => repo
+
+repository is like a folder that has files etc.
+
+For ex: we can look at java/maven project as an individial repository.
+
+Local => the one in your computer
+Remote => in the cloud (GitHub)
+
+GitHub is not a version control tool itself,
+it is a place in the cloud that can store
+your GIT repositories.
+
+
+
+
+Git is DVCS => Distributed Version Control System
+
+Everyone will have local Git Repository which is same as The remote repository.
+
+Developer can make changes to his local repository file and push it to remote repository.
+======================================
+
+Another benefit of Git is COLLABORATION amoung developers/Teams/Community.
+===================
+
+
+2 Different ways of using Git:
+
+1) Command line
+2) GUI tool or a IDE(Ecliplse, IntelliJ plugin)
+
+Command line:
+
+Windows : Powershell
+Mac: Terminal
+===============================
+
+
+Create a new Java project in IntelliJ:
+
+Call it:
+MyFirstGitRepoFall2018
+
+Then Open Terminal at the Buttom:
+
+
+File > New > Project > Select Java > Next >
+Give it a name > Finish.
+
+git config --global user.name
+
+Windows Users:
+
+Install again and select option:
+
+Run git from Windows command prompt
+-----------------------------------
+
+Introduce ourselves to Git:
+
+git config --global user.name "Your name"
+
+git config --global user.email myEmail@Gmail.com
+
+git config --global color.ui true
+====================================
+
+CREATE LOCAL GIT REPOSITORY (REPO):
+
+git init ==> create/initialize local git repository
+
+Because we are in our project folder, so whole java project is part of git repository now.
+
+MyFirstGitRepoFall2018
+
+When you do git init in a folder, it creates
+a hiddin folder called .git
+==================================
+
+Why did we create local git repo?
+
+Because we want to track changes in our java project.
+
+==================================
+
+git status
+
+On branch master ==> now we are in master branch
+
+No commits yet ==> no version were saved yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .idea/
+        MyFirstGitRepoFall2018.iml
+
+
+Untracked files means, those files/folders are created new and we did not ask git to watch or save versions of those folders/files yet.
+
+
+In order for git to save version of our file.
+
+we need to do following steps:
+
+When a new file is added to your project, it's status will be "untracked".
+
+1) Add new files / file updates to STAGING AREA
+
+	git add filename1 filename2
+	git add .   <== git add all the files/folders to
+	staging area.
+
+git status is your friend. You can always check the status of our local git repository.
+
+Status:
+	- any new files?
+	- any files were modified?
+	- any commits?
+
+2) Make a commit / save a version as is
+
+git commit -m "first commit"
+
+-m means a message for that version
+
+you can only commit changes that are currently in
+staging area.
+
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   .idea/workspace.xml
+        modified:   src/HelloWorld.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        out/
+        src/JavaClass1.java
+
+
+PROJECT IN YOUR COMPUTER >> STAGING AREA >> LOCAL REPO COMMIT
+
+git config commands
+
+git init => inialize or create a local git repo
+git add . => add everyting into staging area
+git status => show the status of git repo
+git commit -m "some message" => saves a commit/version
+
+=====================
+
+I already made a commit earlier.
+
+after that, i modified one file by adding one more
+java statement.
+I created a new Java class.
+
+How do i create a new version with these changes?
+
+git add .
+git status
+git commit -m "second commit. Print Good evening, JavaClass1"
+
+Meaning of :
+ "Changes to be committed: "
+
+ it means those changes are in staging area.
+
+How do you see history of your commits/versions?
+
+git log command shows history of commits.
+
+git log is another friend like git status
+=======================
+
+git log
+
+commit ae6c6ba3acf7d29138c1a36fe1914cafc63b347b (HEAD -> master)
+Author: CybertekSchool <github@cybertekschool.com>
+Date:   Wed Jan 16 21:33:20 2019 -0500
+
+    Second commit. Good Even, JavaClass1
+
+commit 365c0dc9f0a102b43917d7d8dbbbc8416319e69e
+Author: CybertekSchool <github@cybertekschool.com>
+Date:   Wed Jan 16 21:04:22 2019 -0500
+
+    First commit
+
+------------------------------
+commit 365c0dc9f0a102b43917d7d8dbbbc8416319e69e
+
+Every commit will have a COMMIT HASH , it is a unique
+id for that commit.
+===============================
+
+STEPS TO SAVE/PUSH LOCAL REPOSITORY IN GitHub(Remote repository)
+
+1) Login to github account
+
+2) Click a NEW button on the left
+
+3) Give it a name and save
+
+Run the commands that show on the screen:
+
+git remote add origin https://github.com/CybertekSchool/MyFirstGitRepoFall2018.git
+git push -u origin master
+=============================
+
+Task:
+
+- create a new Java class
+	Name: GitHub
+	instance variables: public int commits
+
+- add GitHub class to staging area/index
+	git add GitHub.java
+
+- commit the changes:
+	git commit -m "message"
+
+- push to remote repository
+
+	This time we can just use
+	git push command.
+
+	git push
+
+
+11 AM - 1 PM - Fundamental Review Session on Java Loops
+By Myroslava.
+====================================
+
+Homework:
+
+Open your existing IntelliJ project
+and push it to new GitHub repository
+
+=====================================
+My Notes belowe:
+---------------
+Git Cheat Sheet:
+	$ git config --global user.name "firstname lastname"
+	$ git config --global user.email "youremail@email.com"
+	$ git config --global clor.ui true
+	$ git config --list
+
+Starting a new local repository with Git:
+
+	$ git init
+	 this will initialized empty Git repository in /home/dell/new-folder/.git
+
+	The "init" command stands for initialize. Once you run "git init", Git will initialize a hidden directory called ".git" in the project's root directory. And you'll get a confirmation that your deposit box is ready!
+
+Then next:
+	$ git status
+	$ git add .
+			this method:Instead of listing file names one by one, you can use a period – yes, a simple dot – to select all files under the current directory.
+
+	$ git add --all
+			this method:The option "--all" tells Git: "Find all new and updated files everywhere throughout the project and add them to the staging area." Note that you can also use the option "-A" instead of "--all". Thanks to this simple option, "-A" or "--all", the workflow is greatly simplified.
+
+	$ git rm --cached my-file.ts
+			Remember when we told you that you can take things out of your imaginary basket? Git can also take things out of its basket by removing files from the staging area. To remove files from the staging area.
+
+	$ git commit -m "Add three files"
+			To commit to a repository, use the "commit" command. Next, pass the "commit" command the "-m" option, which stands for "message". Lastly, type in your commit message. We wrote "Add three files" for our example, but it's recommended that you write more meaningful messages like "Add admin panel" or "Update admin panel". Note that we didn't use the past tense! A commit message must tell what your commit does – adds or removes files, updates app features.
+
+The basic Git flow looks like this:
+
+	-#  Create a new file in a root directory or in a subdirectory, or update an existing file.
+	-#  Add files to the staging area by using the "git add" command and passing necessary options.
+	-#  Commit files to the local repository using the "git commit -m <message>" command.
+	-#  Repeat.
