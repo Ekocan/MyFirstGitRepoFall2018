@@ -243,8 +243,8 @@ STEPS TO SAVE/PUSH LOCAL REPOSITORY IN GitHub(Remote repository)
 
 Run the commands that show on the screen:
 
-git remote add origin https://github.com/CybertekSchool/MyFirstGitRepoFall2018.git
-git push -u origin master
+    git remote add origin https://github.com/CybertekSchool/MyFirstGitRepoFall2018.git
+    git push -u origin master
 =============================
 
 Task:
@@ -324,3 +324,120 @@ The basic Git flow looks like this:
 	-#  Add files to the staging area by using the "git add" command and passing necessary options.
 	-#  Commit files to the local repository using the "git commit -m <message>" command.
 	-#  Repeat.
+
+ Git + GitHub day 2 Notes:
+
+01/19/2019
+
+Git + GitHub Day 2.
+------------------
+
+Git commands:
+
+How to create local empty repo?
+
+git init
+
+How to see what changes were made in workspace?
+
+git status
+
+How to add changes. new files to index/staging area?
+
+git add fileName
+git add folderName
+git add .
+git add *
+git add --all
+
+git add "*.java" => add only .java files
+
+How to save in local repo as a commit?
+
+git commit -m "update some file"
+
+How to see history of commits?
+
+git log
+
+How to connect local repo to remote repo in github?
+
+git remote add origin pathToGithubRepo.git
+
+How to do initial push to github repo?
+
+git push -u origin master
+
+after initial push we can just say
+git push
+
+What is "untracked" files/changes?
+
+when you create a new file in the workspace, it is "untracked",
+once you add it to staging area, or commit it then that file is no longer "untracked"
+.
+=============================
+
+Login to GitHub and create an empty repository called
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+
+there are many websites that can store/host remote repositories:
+
+-- GitHub
+-- BitBucket
+-- GitLab
+-- many other that out there.
+
+================
+
+git, svn, cvs, etc
+
+GitHub was purchased by microsoft and now allows unlimited private
+repositories for free.
+=================
+Login to GitHub and create an empty repository called
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+==> Create a local repository for Calculator java project.
+
+CybertekSchools-iMac:Calculator cybertekschool$ git init
+Initialized empty Git repository in /Users/cybertekschool/IdeaProjects/Calculator/.git/
+
+==> Set up a remote repository in gitHub for local git repo?
+
+git remote add origin https://github.com/CybertekSchool/Calculator.git
+
+==> How to checkif remote repository successfully set up?
+
+git remote -v
+
+==> Add a file into project
+	added calculator with one method.
+
+==> add src folder into staging area
+
+git add src/
+
+==> commit to local repository:
+
+git commit -m "write add method"
+
+==> check history to see if it was committed:
+
+git log
+
+==> push local repo to github remote repo(origin):
+
+git push -u origin master
+
+==> Goto github and refresh the page and see if was successful
+============================
