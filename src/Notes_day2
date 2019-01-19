@@ -1,0 +1,305 @@
+01/19/2019
+
+Git + GitHub Day 2.
+------------------
+
+Git commands:
+
+How to create local empty repo?
+
+git init
+
+How to see what changes were made in workspace?
+
+git status
+
+How to add changes. new files to index/staging area?
+
+git add fileName
+git add foldername
+git add .
+git add *
+git add --all
+
+git add "*.java" => add only .java files
+
+How to save in local repo as a commit?
+
+git commit -m "update some file"
+
+How to see history of commits?
+
+git log
+
+How to connect local repo to remote repo in github?
+
+git remote add origin pathToGithubRepo.git
+
+How to do initial push to github repo?
+
+git push -u origin master
+
+after initial push we can just say
+git push
+
+What is "untracked" files/changes?
+
+when you create a new file in the workspace, it is "untracked",
+once you add it to staging area, or commit it then that file is no longer "untracked"
+.
+=============================
+
+Login to GitHub and create an empty repository called
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+there are many websites that can store/host remote repositories:
+
+-- GitHub
+-- BitBucket
+-- GitLab
+-- many other that out there.
+
+================
+
+git, svn, cvs, etc
+
+GitHub was purchased by microsoft and now allows unlimited private
+repositories for free.
+=================
+Login to GitHub and create an empty repository called
+"Calculator".
+
+Also Open IntelliJ and create a Java project called
+"Calculator"
+================
+
+==> Create a local repository for Calculator java project.
+
+CybertekSchools-iMac:Calculator cybertekschool$ git init
+Initialized empty Git repository in /Users/cybertekschool/IdeaProjects/Calculator/.git/
+
+==> Set up a remote repository in gitHub for local git repo?
+
+git remote add origin https://github.com/CybertekSchool/Calculator.git
+
+==> How to checkif remote repository successfully set up?
+
+git remote -v
+
+==> Add a file into project
+	added calculator with one method.
+
+==> add src folder into staging area
+
+git add src/
+
+==> commit to local repository:
+
+git commit -m "write add method"
+
+==> check history to see if it was committed:
+
+git log
+
+==> push local repo to github remote repo(origin):
+
+git push -u origin master
+
+==> Goto github and refresh the page and see if was successful
+============================
+
+Some issues so far:
+
+1) Forgot github username and/or password:
+	goto github and reset password
+
+2) cannot push, it says no permission:
+
+	maybe you are trying to push to someone else's remote repo.
+	Owner of github repo must add you as a collaborator.
+===========================
+
+==> modify Calculator.java by adding one more method
+
+==> check if git knows about it
+
+git status
+
+Changes not staged for commit:
+
+   modified:   src/Calculator.java
+
+==> We must add Calculator.java to STAGING area again, since it was modified
+
+git add src/Calculator.java'
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   src/Calculator.java
+
+
+==> git commit
+
+It opens terminal based file editor (like notepad)
+- anything tha t begins with #, is a comment, will be ignored
+
+- type your commit message on top
+- then hit ESC
+- then :wq
+- then hit enter
+
+better alternative:
+
+git commit -m "Add subtract method"
+==============================
+
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+
+==> push new changes to github:
+
+git push
+
+then goto github refresh page and verify.
+====================================
+
+
+GOTO GitHub and edit the Calculator.java file and commit the
+changes in the GitHub:
+
+--> So far we were changing in the workspace then
+add to staging then commit then push changes.
+
+--> now we are changing in GitHub remote repo.
+
+Change in GitHub repo can be done by editing the file in the browser, or maybe some other teammate/contributor pushed his
+code into same github repository.
+
+==> after commiting in GitHub,
+we go to local repo and do
+git pull
+
+CybertekSchools-iMac:Calculator cybertekschool$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/CybertekSchool/Calculator
+   213711a..5e5a8ec  master     -> origin/master
+Updating 213711a..5e5a8ec
+Fast-forward
+ src/Calculator.java | 4 ++++
+ 1 file changed, 4 insertions(+)
+CybertekSchools-iMac:Calculator cybertekschool$
+============================
+
+
+CybertekSchools-iMac:Calculator cybertekschool$ git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/CybertekSchool/Calculator
+   5e5a8ec..ed8d9bc  master     -> origin/master
+Updating 5e5a8ec..ed8d9bc
+error: Your local changes to the following files would be overwritten by merge:
+        src/Calculator.java
+Please commit your changes or stash them before you merge.
+Aborting
+CybertekSchools-iMac:Calculator cybertekschool$
+======================================================
+
+
+IT is your first day in the Job.
+And support team/lead gave you your work laptop.
+And he sent you GitHub URl repo for the automation project.
+
+You need to clone the Repository in GitHub to your machine.
+
+=> get the repo url
+
+=> in your computer, create an empty folder with same name as
+the github repository. selenium
+
+=> open command line(terminal/powershell/cmd) and navigate to that folder
+
+=> clone the github repository
+
+git clone https://github.com/SeleniumHQ/selenium.git
+====================================================
+
+https://github.com/CybertekSchool/parallel-multi-browser-testng-framework
+
+1) clone it to our computer
+2) import to intelliJ
+
+Detailed steps:
+
+1) Create a folder and parallel-multi-browser-testng-framework
+2) Navigate to that folder in command line
+3) git clone https://github.com/CybertekSchool/parallel-multi-browser-testng-framework.git
+4) Open IntelliJ
+5) File > Open ... and navigate to project folder
+6) Click on Open
+
+	File > New > Project from existing sources > step 6
+
+If after import, you cannot run the tests, please do the following:
+
+- File and close the project.
+- Open IntelliJ again
+- File > New > Project from existing sources
+- Select Maven and follow the steps by clicking next
+==================================
+
+
+https://github.com/CybertekSchool/parallel-multi-browser-testng-framework.git
+
+is a public repository. Everyone could see it in the browser
+and clone to it to their machines.
+
+Does it also allow pushing changes to it?
+
+No, unless the owner of the github repository add you as a contributor.
+
+What if new changes were added to that repo, can you pull those
+changes?
+
+
+
+
+GIT PULL command does 2 commands together.
+1) git fetch
+2) get merge
+
+if any changes happened in GitHub and if you run git status,
+your local git does not automatically know the new commits in the github.
+
+If you want to see what was new, you need to fetch first.
+and do git status.
+
+git fetch
+ ==> pulls all the new changes to local repository but it does not
+ merge into workspace/you will not see in intellJ
+
+ get status
+
+
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+
+fast-forward means when merging no conflicts will happen.
+
+
+git merge
+in this case , it merges commits that are in local repository
+to workspace. If is fast-forward merge, then we are happy.
+No merge conflicts happened.
